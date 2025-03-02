@@ -1,24 +1,36 @@
-import logo from './logo.svg';
-import './App.css';
+
+import { gql, useQuery } from '@apollo/client';
+
+
+import ButtonAppBar from './layout/Layout';
+
+const QUERY = gql`
+  query  {
+    authors {
+      name
+    }
+    posts {
+      title
+    }
+  }
+`;
 
 function App() {
+  const { loading, error, data } = useQuery(QUERY);
+  console.log(loading, data, error)
   return (
-    <div className="App">
+    <>
+
+        <ButtonAppBar />
+    <div className="App min-h-screen p-20 flex flex-col items-center">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+
       </header>
     </div>
+    </>
   );
 }
 
