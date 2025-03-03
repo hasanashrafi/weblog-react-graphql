@@ -11,7 +11,7 @@ export default function ButtonAppBar() {
 
   return (
     <Box sx={{ flexGrow: 1 }}  >
-      <AppBar position="sticky" className='max-w-7xl mx-auto '  >
+      <AppBar position="sticky" className='rounded-b-3xl max-w-7xl mx-auto '  >
         <Toolbar className='flex items-center' >
          
           <IconButton onClick={() => setIsOpen(!isOpen)}
@@ -37,8 +37,8 @@ export default function ButtonAppBar() {
 
       {
         isOpen ? (
-          <div className='flex flex-col  shadow-lg rounded max-h-max w-full p-4 bg-white/20 border backdrop-blur-md'>
-            <ul className='flex flex-col gap-4'>
+          <div className='shadow-blue-200 z-20 absolute top-auto right-0 left-0 flex flex-col  shadow-lg  max-h-max  max-w-6xl w-[96%]  transition-all ease-in-out  rounded-b-3xl mx-auto p-4 bg-white/20 border backdrop-blur-md'>
+            <ul className='child-hover:text-blue-800 cursor-pointer  child:w-fit child:font-semibold child:transition-all child:ease-in-out flex flex-col gap-4 text-blue-600'>
               <li>home</li>
               <li>Blogs</li>
               <li>Comments</li>
