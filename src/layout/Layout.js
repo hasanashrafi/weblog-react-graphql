@@ -12,7 +12,8 @@ export default function ButtonAppBar() {
   return (
     <Box sx={{ flexGrow: 1 }}  >
       <AppBar position="sticky" className='max-w-7xl mx-auto '  >
-        <Toolbar >
+        <Toolbar className='flex items-center' >
+         
           <IconButton onClick={() => setIsOpen(!isOpen)}
             size="large"
             edge="start"
@@ -22,15 +23,18 @@ export default function ButtonAppBar() {
           >
             <MenuIcon className='' />
           </IconButton>
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+
+          <Typography variant="h6" fontFamily="Roboto" component="div" sx={{ flexGrow: 1 }}>
             Dev's Weblog
           </Typography>
-          <Typography
-            color="inherit" fontFamily="YekanBakhMedium" >
+
+          <Typography color="inherit"  >
             مقالات
           </Typography>
+
         </Toolbar>
       </AppBar>
+
       {
         isOpen ? (
           <div className='flex flex-col  shadow-lg rounded max-h-max w-full p-4 bg-white/20 border backdrop-blur-md'>
