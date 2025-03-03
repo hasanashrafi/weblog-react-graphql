@@ -4,14 +4,88 @@
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+@font-face {
+  font-family: "YekanBakhBold";
+  src: url("../public/fonts/YekanBakh/YekanBakh-Bold/YekanBakh-Bold.woff")
+      format("woff"),
+    url("../public/fonts/YekanBakh/YekanBakh-Bold/YekanBakh-Bold.ttf")
+      format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "YekanBakhFat";
+  src: url("../public/fonts/YekanBakh/YekanBakh-Fat/YekanBakh-Fat.woff")
+      format("woff"),
+    url("../public/fonts/YekanBakh/YekanBakh-Fat/YekanBakh-Fat.ttf")
+      format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "YekanBakhHeavy";
+  src: url("../public/fonts/YekanBakh/YekanBakh-Heavy/YekanBakh-Heavy.woff")
+      format("woff"),
+    url("../public/fonts/YekanBakh/YekanBakh-Heavy/YekanBakh-Heavy.ttf")
+      format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "YekanBakhLight";
+  src: url("../public/fonts/YekanBakh/YekanBakh-Light/YekanBakh-Light.woff")
+      format("woff"),
+    url("../public/fonts/YekanBakh/YekanBakh-Light/YekanBakh-Light.ttf")
+      format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "YekanBakhMedium";
+  src: url("../public/fonts/YekanBakh/YekanBakh-Medium/YekanBakh-Medium.woff")
+      format("woff"),
+    url("../public/fonts/YekanBakh/YekanBakh-Medium/YekanBakh-Medium.ttf")
+      format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "YekanBakhRegular";
+  src: url("../public/fonts/YekanBakh/YekanBakh-Regular/YekanBakh-Regular.woff")
+      format("woff"),
+    url("../public/fonts/YekanBakh/YekanBakh-Regular/YekanBakh-Regular.ttf")
+      format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+
+.font-YekanBakhBold {
+  font-family: "YekanBakhBold", sans-serif;
+}
+
+.font-YekanBakhFat {
+  font-family: "YekanBakhFat", sans-serif;
+}
+
+.font-YekanBakhHeavy {
+  font-family: "YekanBakhHeavy", sans-serif;
+}
+
+.font-YekanBakhLight {
+  font-family: "YekanBakhLight", sans-serif;
+}
+
+.font-YekanBakhMedium {
+  font-family: "YekanBakhMedium", sans-serif;
+}
+
+.font-YekanBakhRegular {
+  font-family: "YekanBakhRegular", sans-serif;
 }
