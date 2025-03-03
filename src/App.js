@@ -23,11 +23,9 @@ function App() {
 
         <ButtonAppBar />
     <div className="App min-h-screen p-20 flex flex-col items-center">
-      <header className="App-header">
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-
+      <header className="App-header font-YekanBakhMedium">
+       
+<p>سلام</p>
       </header>
     </div>
     </>
