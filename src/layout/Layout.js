@@ -3,7 +3,6 @@ import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
-import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 
@@ -11,9 +10,9 @@ export default function ButtonAppBar() {
   const [isOpen, setIsOpen] = React.useState(false)
 
   return (
-    <Box sx={{ flexGrow: 1 }} >
-      <AppBar position="static">
-        <Toolbar>
+    <Box sx={{ flexGrow: 1 }}  >
+      <AppBar position="sticky" className='max-w-7xl mx-auto '  >
+        <Toolbar >
           <IconButton onClick={() => setIsOpen(!isOpen)}
             size="large"
             edge="start"
@@ -26,7 +25,10 @@ export default function ButtonAppBar() {
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
             Dev's Weblog
           </Typography>
-          <Typography color="inherit">iDeal</Typography>
+          <Typography
+            color="inherit" fontFamily="YekanBakhMedium" >
+            مقالات
+          </Typography>
         </Toolbar>
       </AppBar>
       {
