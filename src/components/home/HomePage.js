@@ -6,7 +6,7 @@ import Blogs from '../blogs/Blogs'
 function HomePage() {
     return (
         <Container maxWidth="lg" className='min-h-screen' >
-            <Grid2 container spacing={2} padding={3}>
+            <Grid2 container spacing={2} padding={3} >
                 <Grid2 mt={4} size={{ xs: 12, md: 3 }}>
                     <Typography
                         component="h3"
@@ -18,7 +18,7 @@ function HomePage() {
                     <Authors />
                 </Grid2>
 
-                <Grid2 mt={4} size={{ xs: 12, md: 3 }}>
+                <Grid2 mt={4} size={{ xs: 12, md: 8 }} >
                     <Typography
                         component="h3"
                         variant='h5'
