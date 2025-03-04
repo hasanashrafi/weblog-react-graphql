@@ -13,7 +13,7 @@ export default function ButtonAppBar() {
     <Box sx={{ flexGrow: 1 }}  >
       <AppBar position="sticky" className='rounded-b-3xl max-w-7xl mx-auto '  >
         <Toolbar className='flex items-center' >
-         
+
           <IconButton onClick={() => setIsOpen(!isOpen)}
             size="large"
             edge="start"
