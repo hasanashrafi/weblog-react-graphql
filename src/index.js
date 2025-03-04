@@ -8,6 +8,7 @@ import reportWebVitals from './reportWebVitals';
 import { ApolloClient, ApolloProvider, InMemoryCache } from '@apollo/client';
 import { ThemeProvider } from '@mui/material';
 import theme from './mui/theme';
+import Layout from './layout/Layout';
 
 
 const client = new ApolloClient({
@@ -23,7 +24,9 @@ root.render(
   <React.StrictMode>
     <ApolloProvider client={client}>
       <ThemeProvider theme={theme}>
-        <App />
+        <Layout>
+          <App />
+        </Layout>
       </ThemeProvider>
     </ApolloProvider>
   </React.StrictMode>
