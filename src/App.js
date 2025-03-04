@@ -2,7 +2,7 @@
 import { gql, useQuery } from '@apollo/client';
 
 
-import ButtonAppBar from './layout/Layout';
+import HomePage from './components/home/HomePage';
 
 const QUERY = gql`
   query  {
@@ -18,17 +18,8 @@ const QUERY = gql`
 function App() {
   const { loading, error, data } = useQuery(QUERY);
   console.log(loading, data, error)
-  return (
-    <>
-
-      <ButtonAppBar />
-      <div className="App min-h-screen p-20 flex flex-col items-center">
-        <header className="App-header ">
-          <p>سلام</p>
-        </header>
-      </div>
-    </>
-  );
+  
+  return <HomePage/>
 }
 
 export default App;
