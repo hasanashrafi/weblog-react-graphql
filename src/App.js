@@ -21,10 +21,9 @@ function App() {
   console.log(loading, data, error)
 
   return (
-    <>
-      <NavBar />
+    
       <HomePage />
-    </>
+    
   )
 }
 
