@@ -5,8 +5,9 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
+import { BookOnline, MenuBook } from '@mui/icons-material';
 
-export default function ButtonAppBar() {
+export default function NavBar() {
   const [isOpen, setIsOpen] = React.useState(false)
 
   return (
@@ -24,12 +25,12 @@ export default function ButtonAppBar() {
             <MenuIcon className='' />
           </IconButton>
 
-          <Typography variant="h6" fontFamily="Roboto" component="div" sx={{ flexGrow: 1 }}>
-            Dev's Weblog
+          <Typography variant="h6" mr={1} component="div" sx={{ flexGrow: 1 }}>
+            وبلاگ برنامه نویسان
           </Typography>
 
           <Typography color="inherit"  >
-            مقالات
+            <MenuBook />
           </Typography>
 
         </Toolbar>
