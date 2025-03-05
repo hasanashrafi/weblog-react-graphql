@@ -22,5 +22,17 @@ query MyQuery {
             
 `
 
+const GET_AUTHORS_INFO = gql `
+query MyQuery {
+  authors {
+    id
+    name
+    slug
+    avatar {
+      url
+    }
+  }
+}
+`
 
-export {GET_BLOGS_INFO}
+export {GET_BLOGS_INFO,GET_AUTHORS_INFO}
