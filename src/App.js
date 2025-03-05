@@ -1,27 +1,20 @@
+import { Route, Routes } from "react-router-dom";
+import HomePage from "./components/home/HomePage";
+import BlogPage from "./components/blogs/BlogPage";
+import AuthorPage from "./components/authors/AuthorPage";
 
-// import { gql, useQuery } from '@apollo/client';
-
-
-import HomePage from './components/home/HomePage';
-
-// const QUERY = gql`
-//   query  {
-//     authors {
-//       name
-//     }
-//     posts {
-//       title
-//     }
-//   }
-// `;
 
 function App() {
-  // const { loading, error, data } = useQuery(QUERY);
-  // console.log(loading, data, error)
-
+  
   return (
-    
-      <HomePage />
+    <>
+<Routes>
+  <Route path="/" element={<HomePage />} /> 
+  <Route path="/blogs/:slug" element={<BlogPage />} /> 
+  <Route path="/authors/:slug" element={<AuthorPage />} /> 
+</Routes>
+     
+    </>
     
   )
 }
