@@ -9,6 +9,7 @@ import { ApolloClient, ApolloProvider, InMemoryCache } from '@apollo/client';
 import { ThemeProvider } from '@mui/material';
 import theme from './mui/theme';
 import Layout from './layout/Layout';
+import { BrowserRouter } from 'react-router-dom';
 
 
 const client = new ApolloClient({
@@ -23,11 +24,13 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <ApolloProvider client={client}>
-      <ThemeProvider theme={theme}>
-        <Layout>
-          <App />
-        </Layout>
-      </ThemeProvider>
+      <BrowserRouter>
+        <ThemeProvider theme={theme}>
+          <Layout>
+            <App />
+          </Layout>
+        </ThemeProvider>
+      </BrowserRouter>
     </ApolloProvider>
   </React.StrictMode>
 )
