@@ -14,8 +14,8 @@ function Authors() {
     }
   }, [data])
 
-  if (loading) return <div className='min-h-screen flex items-center justify-center'>Loading...</div>
-  if (error) return <div className='min-h-screen flex items-center justify-center'>Error: {error.message}</div>
+  if (loading) return <div className='min-h-screen flex items-start justify-start'>در حال بارگذاری نویسنده ها</div>
+  if (error) return <div className='min-h-screen flex items-start justify-start'>مشکلی پیش آمده است {error.message}</div>
 
   console.log(data)
   return (
@@ -25,9 +25,9 @@ function Authors() {
         boxShadow: "rgba(0,0,0,0.1) 0px 4px 12px"
       }}>
 
-      {authors.map((author) => (
-        <Grid item xs={12} padding={2}>
-          <AuthorEl key={author.id} author={author} />
+      {authors.map((author,index) => (
+        <Grid item xs={12} padding={1} key={author.id}>
+          <AuthorEl  author={author} index={index} authors={authors} />
         </Grid>
       ))}
     </Grid>
