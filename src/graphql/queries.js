@@ -22,7 +22,7 @@ query MyQuery {
             
 `
 
-const GET_AUTHORS_INFO = gql `
+const GET_AUTHORS_INFO = gql`
 query MyQuery {
   authors {
     id
@@ -34,5 +34,37 @@ query MyQuery {
   }
 }
 `
+const GET_AUTHOR_INFO = gql`
+query getAuthorInfo($slug:String!) {
+  author(where: {slug: $slug}) {
+    avatar {
+      url
+    }
+    name
+    posts {
+      id
+      title
+      slug
+      author {
+        ... on Author {
+          id
+          name
+          avatar {
+            url
+          }
+        }
+      }
+      coverPhoto {
+        url
+        id
+      }
+    }
+    field
+    description {
+      text
+    }
+  }
+}
+`
 
-export {GET_BLOGS_INFO,GET_AUTHORS_INFO}
+export { GET_BLOGS_INFO, GET_AUTHORS_INFO, GET_AUTHOR_INFO }
