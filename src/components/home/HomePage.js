@@ -1,13 +1,13 @@
 import React from 'react'
-import { Container, Grid2, Typography } from '@mui/material'
+import { Container, Grid, Typography } from '@mui/material'
 import Authors from '../authors/Authors'
 import Blogs from '../blogs/Blogs'
 
 function HomePage() {
     return (
         <Container maxWidth="lg" className='min-h-screen' >
-            <Grid2 container spacing={2} padding={3} >
-                <Grid2 mt={4} size={{ xs: 12, md: 3 }}>
+            <Grid container spacing={2}  >
+                <Grid item mt={4} sx={12} md={3}>
                     <Typography
                         component="h3"
                         variant='h5'
@@ -16,9 +16,9 @@ function HomePage() {
                         نویسنده ها
                     </Typography>
                     <Authors />
-                </Grid2>
+                </Grid>
 
-                <Grid2 mt={4} size={{ xs: 12, md: 8 }} >
+                <Grid item mt={4} sx={12} md={9} >
                     <Typography
                         component="h3"
                         variant='h5'
@@ -27,8 +27,8 @@ function HomePage() {
                         مقالات
                     </Typography>
                     <Blogs />
-                </Grid2>
-            </Grid2>
+                </Grid>
+            </Grid>
         </Container>
     )
 }
