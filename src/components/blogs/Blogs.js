@@ -1,13 +1,12 @@
 import { useQuery } from '@apollo/client'
 import React, { useState, useEffect } from 'react'
 import { GET_BLOGS_INFO } from '../../graphql/queries'
-import { Grid2 } from '@mui/material'
+import { Grid, Typography } from '@mui/material'
+import CardEl from '../../shared/CardEl'
 
 function Blogs() {
   const { loading, data, error } = useQuery(GET_BLOGS_INFO)
   const [posts, setPosts] = useState([])
-
-  console.log(data)
 
   useEffect(() => {
     if (data) {
@@ -15,21 +14,17 @@ function Blogs() {
     }
   }, [data])
 
-  if (loading) return <p>Loading...</p>
-  if (error) return <p>Error...</p>
+  if (loading) return <Typography>Loading...</Typography>
+  if (error) return <Typography>Error...</Typography>
 
   return (
-    <Grid2 container  spacing={2} padding={3} className=''>
+    <Grid container spacing={2} >
       {posts.map((post) => (
-        <Grid2 key={post.id} mt={4} size={{ xs: 12,sm:6, md: 4 }}>
-
-          <img src={post.coverPhoto.url} alt='post.title'  />
-          <p >{post.title}</p>
-
-
-        </Grid2>
+        <Grid item xs={12} sm={6} md={4} >
+          <CardEl key={post.id} post={post} />
+        </Grid>
       ))}
-    </Grid2>
+    </Grid>
   )
 }
 
