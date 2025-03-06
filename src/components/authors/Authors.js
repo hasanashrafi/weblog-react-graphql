@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react'
 import { GET_AUTHORS_INFO } from '../../graphql/queries'
 import { Grid } from '@mui/material'
 import AuthorEl from '../../shared/AuthorEl'
+import Loader from '../../templates/Loader'
 
 function Authors() {
   const { loading, data, error } = useQuery(GET_AUTHORS_INFO)
@@ -14,7 +15,7 @@ function Authors() {
     }
   }, [data])
 
-  if (loading) return <div className='min-h-screen flex items-start justify-start'>در حال بارگذاری نویسنده ها</div>
+
   if (error) return <div className='min-h-screen flex items-start justify-start'>مشکلی پیش آمده است {error.message}</div>
 
   console.log(data)
@@ -24,10 +25,12 @@ function Authors() {
         borderRadius: "15px",
         boxShadow: "rgba(0,0,0,0.1) 0px 4px 12px"
       }}>
-
-      {authors.map((author,index) => (
+      {
+        loading && <Loader />
+      }
+      {authors.map((author, index) => (
         <Grid item xs={12} padding={1} key={author.id}>
-          <AuthorEl  author={author} index={index} authors={authors} />
+          <AuthorEl author={author} index={index} authors={authors} />
         </Grid>
       ))}
     </Grid>
