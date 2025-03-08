@@ -15,19 +15,17 @@ function Authors() {
     }
   }, [data])
 
-
+  if (loading) return <Loader />
   if (error) return <div className='min-h-screen flex items-start justify-start'>مشکلی پیش آمده است {error.message}</div>
 
-  console.log(data)
+
   return (
     <Grid container
       sx={{
         borderRadius: "15px",
         boxShadow: "rgba(0,0,0,0.1) 0px 4px 12px"
       }}>
-      {
-        loading && <Loader />
-      }
+
       {authors.map((author, index) => (
         <Grid item xs={12} padding={1} key={author.id}>
           <AuthorEl author={author} index={index} authors={authors} />
