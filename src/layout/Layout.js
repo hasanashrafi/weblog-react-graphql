@@ -8,10 +8,9 @@ export default function Layout({ children }) {
   return (
     <div>
       <Header />
-      <Container sx={{ minHeight: "100vh" }}>
+      <Container sx={{ minHeight: "100vh"}} >
         {children}
       </Container>
-
 
       <Footer />
     </div>
