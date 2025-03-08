@@ -19,7 +19,6 @@ function Authors() {
   if (loading) return <Loader />
   if (error) return <div className='min-h-screen flex items-start justify-start'>مشکلی پیش آمده است {error.message}</div>
 
-
   return (
     <Grid container maxWidth="lg" mx="auto"
       sx={{
