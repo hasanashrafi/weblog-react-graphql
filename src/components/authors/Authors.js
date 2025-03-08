@@ -5,6 +5,7 @@ import { Grid } from '@mui/material'
 import AuthorEl from '../../shared/AuthorEl'
 import Loader from '../../templates/Loader'
 
+
 function Authors() {
   const { loading, data, error } = useQuery(GET_AUTHORS_INFO)
   const [authors, setAuthors] = useState([])
@@ -20,18 +21,22 @@ function Authors() {
 
 
   return (
-    <Grid container
+    <Grid container maxWidth="lg" mx="auto"
       sx={{
+
         borderRadius: "15px",
         boxShadow: "rgba(0,0,0,0.1) 0px 4px 12px"
       }}>
 
-      {authors.map((author, index) => (
-        <Grid item xs={12} padding={1} key={author.id}>
-          <AuthorEl author={author} index={index} authors={authors} />
-        </Grid>
-      ))}
+      
+        {authors.map((author, index) => (
+          <Grid item xs={12} padding={1} key={author.id}>
+            <AuthorEl author={author} index={index} authors={authors} />
+          </Grid>
+        ))}
+      
     </Grid>
+
   )
 }
 
