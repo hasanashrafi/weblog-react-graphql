@@ -3,8 +3,8 @@ import React from 'react'
 
 function Footer() {
     return (
-        <Box sx={{ flexGrow: 1 }} maxWidth="lg" mx="auto" mt={10}  >
-            <AppBar position="sticky" className='rounded-t-3xl' height={1} >
+        <Box sx={{ flexGrow: 1,height:50  }} maxWidth="lg" mx="auto" mt={10}   >
+            <AppBar position="sticky" sx={{bgcolor:"#211C84",height:50}}  >
                 <Toolbar className=' flex items-center justify-center text-center '  >
                     <Typography  variant="h6" mx="auto" component="div" sx={{ flexGrow: 1 }}>
                         Developed By HsN
