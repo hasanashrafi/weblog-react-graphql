@@ -19,7 +19,7 @@ function Blogs() {
   if (loading) return <Loader />
 
   return (
-    <Grid container spacing={2} >
+    <Grid container mx="auto" maxWidth="lg" spacing={2} >
       
       {posts.map((post) => (
         <Grid item xs={12} sm={6} md={4} key={post.id}>
