@@ -27,7 +27,7 @@ function AuthorPage() {
 
 
     return (
-        <Container maxWidth="lg" sx={{ padding: 2, minHeight: '100vh' }}>
+        <Container maxWidth="lg" sx={{ padding: 2, minHeight: '100vh' }} className='min-h-screen'>
             <Grid container display="flex" flexDirection="column">
                 <ArrowBack className='self-end mt-4 hover:text-gray-600 transition-all ease-in-out cursor-pointer' onClick={() => navigate(-1)} />
 
