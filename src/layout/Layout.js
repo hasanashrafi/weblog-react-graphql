@@ -1,5 +1,6 @@
 import Header from "./Header"
 import Footer from "./Footer"
+import { Container, Grid } from "@mui/material";
 
 
 export default function Layout({ children }) {
@@ -7,8 +8,12 @@ export default function Layout({ children }) {
   return (
     <div>
       <Header />
-      {children}
-      <Footer/>
+      <Container sx={{ minHeight: "100vh" }}>
+        {children}
+      </Container>
+
+
+      <Footer />
     </div>
   );
 }
