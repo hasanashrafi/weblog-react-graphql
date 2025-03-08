@@ -33,7 +33,7 @@ function Header() {
     }, []);
 
     return (
-        <Box sx={{ flexGrow: 1 }} maxWidth="lg" mx="auto" mb={4}>
+        <Box sx={{ flexGrow: 1 }} maxWidth="lg" mx="auto" mb={10}>
             <AppBar position="fixed" sx={{ bgcolor: "#211C84" }}>
                 <Toolbar className='flex items-center'>
                     <MenuBook />
