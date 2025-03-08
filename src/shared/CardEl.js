@@ -4,8 +4,6 @@ import { Link } from 'react-router-dom'
 
 function CardEl({ title, slug, coverPhoto, author }) {
 
-    console.log(coverPhoto)
-
     return (
         <Card sx={{ height: "450px", borderRadius: "15px", boxShadow: "rgba(0,0,0,0.1) 0px 4px 12px", display: "flex", flexDirection: "column", justifyContent: "space-around" }}>
             {author && (<Link to={`/authors/${author.slug}`}>
