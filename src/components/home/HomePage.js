@@ -5,7 +5,7 @@ import Blogs from '../blogs/Blogs'
 
 function HomePage() {
     return (
-        <Container maxWidth="lg" className='min-h-screen' >
+        <Container maxWidth="lg" className='min-h-screen ' >
             <Grid container spacing={2}  >
                 <Grid item mt={4} sx={12} md={3} >
                     <Typography
