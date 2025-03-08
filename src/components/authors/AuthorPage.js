@@ -18,13 +18,9 @@ function AuthorPage() {
     })
 
     if (loading) return <Loader />
-
-
-
-
     if (!data) return null
+    
     const { author } = data
-
 
     return (
         <Container maxWidth="lg" sx={{ padding: 2, minHeight: '100vh' }} className='min-h-screen'>
