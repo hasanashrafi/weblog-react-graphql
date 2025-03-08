@@ -6,6 +6,7 @@ query MyQuery {
     author {
       ... on Author {
         name
+        slug
         avatar {
           url
         }
@@ -49,6 +50,7 @@ query getAuthorInfo($slug:String!) {
         ... on Author {
           id
           name
+        
           avatar {
             url
           }
@@ -61,7 +63,7 @@ query getAuthorInfo($slug:String!) {
     }
     field
     description {
-      text
+      html
     }
   }
 }
@@ -75,13 +77,14 @@ query getPostInfo($slug:String!) {
         id
         name
         slug
+        field
         avatar {
           url
         }
       }
     }
     content {
-      text
+      html
     }
     coverPhoto {
       url
