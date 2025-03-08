@@ -12,7 +12,7 @@ function HomePage() {
                         component="h3"
                         variant='h5'
                         mb={2}
-                       sx={{textShadow:"0px 0px 6px rgba(49,41,45,0.4)"}}
+                      
                         fontWeight={700}>
                         نویسنده ها
                     </Typography>
@@ -25,8 +25,7 @@ function HomePage() {
                         component="h3"
                         variant='h5'
                         mb={2}
-                        sx={{textShadow:"0px 0px 6px rgba(49,41,45,0.4)"}}
-
+                        
                         fontWeight={700}>
                         مقالات
                     </Typography>
