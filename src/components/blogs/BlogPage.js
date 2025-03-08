@@ -6,6 +6,7 @@ import { Link, useNavigate, useParams } from 'react-router-dom'
 import Loader from '../../templates/Loader'
 import sanitizeHtml from 'sanitize-html'
 import { ArrowBack } from '@mui/icons-material'
+import CommentForm from '../comment/CommentForm'
 
 function BlogPage() {
     const params = useParams()
@@ -16,12 +17,9 @@ function BlogPage() {
     })
 
     if (loading) return <Loader />
+    if (error) return <p>{error.message}</p>
 
     const { post } = data
-    console.log(data)
-
-
-    if (error) return <p>{error.message}</p>
 
     return (
         <Container maxWidth="lg" sx={{ padding: 2, minHeight: '100vh' }}>
@@ -69,7 +67,9 @@ function BlogPage() {
                     </div>
                 </Grid>
 
-
+                <Grid>
+                    <CommentForm />
+                </Grid>
 
             </Grid>
         </Container>
