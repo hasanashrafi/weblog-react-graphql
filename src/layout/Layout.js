@@ -1,6 +1,6 @@
 import Header from "./Header"
 import Footer from "./Footer"
-import { Container, Grid } from "@mui/material";
+import { Container } from "@mui/material";
 
 
 export default function Layout({ children }) {

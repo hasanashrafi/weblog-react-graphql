@@ -34,7 +34,7 @@ function Header() {
 
     return (
         <Box sx={{ flexGrow: 1 }} maxWidth="lg" mx="auto" mb={4}>
-            <AppBar position="sticky" sx={{ bgcolor: "#211C84" }}>
+            <AppBar position="fixed" sx={{ bgcolor: "#211C84" }}>
                 <Toolbar className='flex items-center'>
                     <MenuBook />
                     <Typography variant="h6" mr={2} component="div" sx={{ flexGrow: 1 }}>
