@@ -56,7 +56,6 @@ function BlogPage() {
                         <Box component="div">
                             <Typography component="p" variant='h6' fontWeight={600} mr={2}>{post.author.name}</Typography>
                             <Typography component="p" variant='p' color='text.secondary' mr={2}>{post.author.field}</Typography>
-
                         </Box>
                     </Link>
 
@@ -68,7 +67,7 @@ function BlogPage() {
                 </Grid>
 
                 <Grid>
-                    <CommentForm />
+                    <CommentForm slug={post.slug} />
                 </Grid>
 
             </Grid>
