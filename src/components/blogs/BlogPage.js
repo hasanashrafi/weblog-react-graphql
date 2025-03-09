@@ -7,6 +7,7 @@ import Loader from '../../templates/Loader'
 import sanitizeHtml from 'sanitize-html'
 import { ArrowBack } from '@mui/icons-material'
 import CommentForm from '../comment/CommentForm'
+import Comments from '../comment/Comments'
 
 function BlogPage() {
     const params = useParams()
@@ -64,6 +65,10 @@ function BlogPage() {
                 <Grid item xs={12} my={5}>
                     <div className=' text-start' dangerouslySetInnerHTML={{ __html: sanitizeHtml(post.content.html) }}>
                     </div>
+                </Grid>
+
+                <Grid item>
+                    <Comments slug={post.slug}/>
                 </Grid>
 
                 <Grid>
