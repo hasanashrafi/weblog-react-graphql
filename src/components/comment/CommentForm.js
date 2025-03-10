@@ -1,15 +1,17 @@
-import { useMutation } from '@apollo/client'
-import { Button, Grid, TextField, Typography } from '@mui/material'
 import { useState } from 'react'
+import { useMutation } from '@apollo/client'
+
+import { Button, Grid, TextField, Typography } from '@mui/material'
+import { ToastContainer, toast } from 'react-toastify';
+
 import { SEND_COMMENT } from '../../graphql/mutations'
 
-import { ToastContainer, toast } from 'react-toastify';
 
 function CommentForm({ slug }) {
     const [name, setName] = useState('')
     const [email, setEmail] = useState('')
     const [text, setText] = useState('')
-    const [sendComment, { loading}] = useMutation(SEND_COMMENT, {
+    const [sendComment, { loading }] = useMutation(SEND_COMMENT, {
         variables: {
             slug,
             name,
@@ -17,20 +19,26 @@ function CommentForm({ slug }) {
             text
         },
         onCompleted: () => {
-            toast.success('کامنت شما با موفقیت ارسال شد');
+            toast.success('کامنت شما با موفقیت ارسال شد', {
+                position: "top-center"
+            });
             setName('');
             setEmail('');
             setText('');
         },
         onError: () => {
-            toast.error('خطایی در ارسال کامنت رخ داد');
+            toast.error('خطایی در ارسال کامنت رخ داد', {
+                position: "top-center"
+            });
         }
     })
 
     const sendHandler = (e) => {
         e.preventDefault()
         if (!name || !email || !text) {
-            toast.warn('لطفا تمام فیلدها را پر کنید')
+            toast.warn('لطفا تمام فیلدها را پر کنید', {
+                position: "top-center"
+            })
             return
         }
         sendComment()
