@@ -1,9 +1,11 @@
 import { useQuery } from '@apollo/client'
 import React, { useState, useEffect } from 'react'
-import { GET_BLOGS_INFO } from '../../graphql/queries'
+
 import { Grid } from '@mui/material'
+
 import CardEl from '../../shared/CardEl'
 import Loader from '../../templates/Loader'
+import { GET_BLOGS_INFO } from '../../graphql/queries'
 
 function Blogs() {
   const { loading, data, error } = useQuery(GET_BLOGS_INFO)
