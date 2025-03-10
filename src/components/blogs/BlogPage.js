@@ -1,13 +1,16 @@
-import { useQuery } from '@apollo/client'
-import { Avatar, Box, CardMedia, Container, Grid, Typography } from '@mui/material'
+
 import React from 'react'
-import { GET_POST_INFO } from '../../graphql/queries'
+import { useQuery } from '@apollo/client'
 import { Link, useNavigate, useParams } from 'react-router-dom'
-import Loader from '../../templates/Loader'
-import sanitizeHtml from 'sanitize-html'
+
 import { ArrowBack } from '@mui/icons-material'
-import CommentForm from '../comment/CommentForm'
+import { Avatar, Box, CardMedia, Container, Grid, Typography } from '@mui/material'
+
+import sanitizeHtml from 'sanitize-html'
 import Comments from '../comment/Comments'
+import Loader from '../../templates/Loader'
+import CommentForm from '../comment/CommentForm'
+import { GET_POST_INFO } from '../../graphql/queries'
 
 function BlogPage() {
     const params = useParams()
@@ -68,12 +71,10 @@ function BlogPage() {
                 </Grid>
 
                 <Grid item>
-                    <Comments slug={post.slug}/>
-                </Grid>
-
-                <Grid>
+                    <Comments slug={post.slug} />
                     <CommentForm slug={post.slug} />
                 </Grid>
+
 
             </Grid>
         </Container>
