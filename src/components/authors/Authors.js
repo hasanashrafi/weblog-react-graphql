@@ -1,9 +1,11 @@
 import { useQuery } from '@apollo/client'
 import React, { useState, useEffect } from 'react'
-import { GET_AUTHORS_INFO } from '../../graphql/queries'
+
 import { Grid } from '@mui/material'
-import AuthorEl from '../../shared/AuthorEl'
+
 import Loader from '../../templates/Loader'
+import AuthorEl from '../../shared/AuthorEl'
+import { GET_AUTHORS_INFO } from '../../graphql/queries'
 
 
 function Authors() {
