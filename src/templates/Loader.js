@@ -1,6 +1,6 @@
-import { CircularProgress, Container, Stack } from '@mui/material'
-
 import React from 'react'
+
+import { CircularProgress, Container, Stack } from '@mui/material'
 
 function Loader() {
     return (
