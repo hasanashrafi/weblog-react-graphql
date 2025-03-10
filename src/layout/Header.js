@@ -1,12 +1,14 @@
 import React, { useState, useEffect, useRef } from 'react';
-import AppBar from '@mui/material/AppBar';
-import Box from '@mui/material/Box';
-import Toolbar from '@mui/material/Toolbar';
-import Typography from '@mui/material/Typography';
-import { MenuBook } from '@mui/icons-material';
 import { Link } from 'react-router-dom';
-import { Grid, IconButton } from '@mui/material';
+
+import Box from '@mui/material/Box';
+import AppBar from '@mui/material/AppBar';
+import Toolbar from '@mui/material/Toolbar';
+import { MenuBook } from '@mui/icons-material';
 import MenuIcon from '@mui/icons-material/Menu';
+import { Grid, IconButton } from '@mui/material';
+import Typography from '@mui/material/Typography';
+
 
 function Header() {
     const [menuOpen, setMenuOpen] = useState(false);
@@ -15,7 +17,6 @@ function Header() {
 
     useEffect(() => {
         const handleClickOutside = (event) => {
-            // Check if the click is outside the menu and not on the menu button
             if (
                 menuRef.current &&
                 !menuRef.current.contains(event.target) &&
@@ -43,14 +44,13 @@ function Header() {
                         </Link>
                     </Typography>
 
-                    {/* Desktop Menu Items (Hidden on Mobile) */}
+                   
                     <Box sx={{ display: { xs: 'none', md: 'flex' }, gap: 2 }}>
                         <Link to="/" className='hover:text-gray-400 transition-all ease-in-out'>صفحه اصلی</Link>
                         <Link to="/authors" className='hover:text-gray-400 transition-all ease-in-out'>نویسنده ها</Link>
                         <Link to="/blogs" className='hover:text-gray-400 transition-all ease-in-out'>مقالات</Link>
                     </Box>
 
-                    {/* Mobile Menu Button (Hidden on Desktop) */}
                     <IconButton
                         ref={menuButtonRef}
                         onClick={() => setMenuOpen(!menuOpen)}
@@ -65,7 +65,6 @@ function Header() {
                 </Toolbar>
             </AppBar>
 
-            {/* Mobile Menu (Hidden on Desktop) */}
             {menuOpen && (
                 <Box
                     ref={menuRef}
