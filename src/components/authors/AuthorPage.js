@@ -1,13 +1,17 @@
-import { useQuery } from '@apollo/client'
-import { Avatar, Divider, Grid, Typography } from '@mui/material'
 import React from 'react'
-import { GET_AUTHOR_INFO } from '../../graphql/queries'
 import { useNavigate, useParams } from 'react-router-dom'
+import { useQuery } from '@apollo/client'
+
 import CardEl from '../../shared/CardEl'
-import { Container } from '@mui/material'
 import Loader from '../../templates/Loader'
+import { GET_AUTHOR_INFO } from '../../graphql/queries'
+
 import sanitizeHtml from 'sanitize-html'
+
+import { Container } from '@mui/material'
 import { ArrowBack } from '@mui/icons-material'
+import { Avatar, Divider, Grid, Typography } from '@mui/material'
+
 
 function AuthorPage() {
     const { slug } = useParams()
