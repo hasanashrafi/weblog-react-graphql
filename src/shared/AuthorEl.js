@@ -1,6 +1,7 @@
-import { Avatar, Divider, Grid, Typography } from '@mui/material'
 import React from 'react'
 import { Link } from 'react-router-dom'
+
+import { Avatar, Divider, Grid, Typography } from '@mui/material'
 
 function AuthorEl({ author, index, authors }) {
     return (
