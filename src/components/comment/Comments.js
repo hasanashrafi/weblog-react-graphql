@@ -1,30 +1,35 @@
-import { useQuery } from '@apollo/client'
-import { Grid, Typography } from '@mui/material'
 import React from 'react'
+import { useQuery } from '@apollo/client'
+import { Avatar, Box, Grid, Typography } from '@mui/material'
+
 import { GET_COMMENT_INFO } from '../../graphql/queries'
 
 function Comments({ slug }) {
     const { loading, data, error } = useQuery(GET_COMMENT_INFO, {
         variables: { slug },
     })
-console.log(data)
-    if (loading) return <Typography>Loading...</Typography>
+   
+    if (loading) return null
     if (error) return <Typography>Error: {error.message}</Typography>
 
     return (
-        <Grid container>
-            <Grid item xs={12}>
-                {data && data.comments && (
-                    <ul>
-                        {data.comments.map((comment) => (
-                            <>
+        <Grid container sx={{ boxShadow: "rgba(0,0,0,0.1) 0px 4px 12px", borderRadius: 4, py: 1, mt: 5 }}>
+            <Grid item xs={12} m={2}>
+                <Typography component="p" variant='h6' fontWeight={700} color='primary'>کامنت ها </Typography>
 
-                                <li key={comment.id}>{comment.text}</li>
-                                <li >{comment.name}</li>
-                            </>
-                        ))}
-                    </ul>
-                )}
+                {
+                    data.comments.map((comment) => (
+                        <Grid item xs={12} key={comment.id} m={2} padding={2} border="1px silver solid" borderRadius={2} >
+                            <Box component="div" display="flex" mb={3} alignItems="center">
+                                <Avatar >{comment.name[0]}</Avatar>
+                                <Typography component="span" variant='p' mr={1}>{comment.name}</Typography>
+                            </Box>
+                            <Typography component="p" variant='p'>{comment.text}</Typography>
+                        </Grid>
+                    ))
+                }
+
+
             </Grid>
         </Grid>
     )
