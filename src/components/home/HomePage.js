@@ -1,7 +1,9 @@
 import React from 'react'
-import { Container, Grid, Typography } from '@mui/material'
+
 import Authors from '../authors/Authors'
 import Blogs from '../blogs/Blogs'
+
+import { Container, Grid, Typography } from '@mui/material'
 
 function HomePage() {
     return (
