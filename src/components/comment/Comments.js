@@ -3,12 +3,13 @@ import { useQuery } from '@apollo/client'
 import { Avatar, Box, Grid, Typography } from '@mui/material'
 
 import { GET_COMMENT_INFO } from '../../graphql/queries'
+import getRandomColor from '../../helper/randomColor'
 
 function Comments({ slug }) {
     const { loading, data, error } = useQuery(GET_COMMENT_INFO, {
         variables: { slug },
     })
-   
+
     if (loading) return null
     if (error) return <Typography>Error: {error.message}</Typography>
 
@@ -21,8 +22,8 @@ function Comments({ slug }) {
                     data.comments.map((comment) => (
                         <Grid item xs={12} key={comment.id} m={2} padding={2} border="1px silver solid" borderRadius={2} >
                             <Box component="div" display="flex" mb={3} alignItems="center">
-                                <Avatar >{comment.name[0]}</Avatar>
-                                <Typography component="span" variant='p' mr={1}>{comment.name}</Typography>
+                                <Avatar sx={{ bgcolor: getRandomColor() }} >{comment.name[0]}</Avatar>
+                                <Typography component="span" variant='h6' mr={1}>{comment.name}</Typography>
                             </Box>
                             <Typography component="p" variant='p'>{comment.text}</Typography>
                         </Grid>
