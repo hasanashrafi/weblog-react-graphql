@@ -1,15 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import { BrowserRouter } from 'react-router-dom';
 
 import './index.css';
 import App from './App';
+import Layout from './layout/Layout';
 
 import reportWebVitals from './reportWebVitals';
+
 import { ApolloClient, ApolloProvider, InMemoryCache } from '@apollo/client';
-import { ThemeProvider } from '@mui/material';
+
 import theme from './mui/theme';
-import Layout from './layout/Layout';
-import { BrowserRouter } from 'react-router-dom';
+import { ThemeProvider } from '@mui/material';
 
 
 const client = new ApolloClient({
