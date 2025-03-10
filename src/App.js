@@ -1,9 +1,10 @@
 import { Route, Routes } from "react-router-dom";
+
+import Blogs from "./components/blogs/Blogs";
 import HomePage from "./components/home/HomePage";
+import Authors from "./components/authors/Authors";
 import BlogPage from "./components/blogs/BlogPage";
 import AuthorPage from "./components/authors/AuthorPage";
-import Blogs from "./components/blogs/Blogs";
-import Authors from "./components/authors/Authors";
 
 
 function App() {
